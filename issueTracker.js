@@ -2,17 +2,17 @@
 document.getElementById('issueInputForm').addEventListener('submit', saveIssue);
 
 function saveIssue(e) {
-	var issueDesc = document.getElementById('issueDescInput').value;
-	var issueSeverity = document.getElementById('issueSeverityInput').value;
-	var issueAssignedTo = document.getElementById('issueAssignedToInput').value;
+	let issueDesc = document.getElementById('issueDescInput').value;
+	let issueSeverity = document.getElementById('issueSeverityInput').value;
+	let issueAssignedTo = document.getElementById('issueAssignedToInput').value;
 	
 	// To get an unique identifier for an issue, we are using chance.js script 
-	var issueId = chance.guid(); //guid : Global Unique Identifier.
-	var issueStatus = 'Open';
+	let issueId = chance.guid(); //guid : Global Unique Identifier.
+	let issueStatus = 'Open';
 	
 	
 	// creating class : issue with properties id, description, sev, assignedTo, status
-	var issue = {
+	let issue = {
 		id: issueId,
 		description: issueDesc,
 		severity: issueSeverity,
@@ -47,7 +47,7 @@ function saveIssue(e) {
 }
 
 function setStatusClosed(id) {
-	var issues = JSON.parse(localStorage.getItem('issues'));
+	let issues = JSON.parse(localStorage.getItem('issues'));
 	
 	for(let i = 0; i < issues.length; i++) {
 		if(issues[i].id == id) {
@@ -65,7 +65,7 @@ function setStatusClosed(id) {
 
 
 function deleteIssue(id) {
-	var issues = JSON.parse(localStorage.getItem('issues'));
+	let issues = JSON.parse(localStorage.getItem('issues'));
 	
 	for(let i = 0; i < issues.length; i++) {
 		if(issues[i].id == id) {
@@ -83,18 +83,18 @@ issues. Browser is used to store the issues data.
 
 
 function fetchIssues() {
-	var issues = JSON.parse(localStorage.getItem('issues'));
-	var issuesList = document.getElementById('issuesList');
+	let issues = JSON.parse(localStorage.getItem('issues'));
+	let issuesList = document.getElementById('issuesList');
 	
 	//Make issueList content empty
 	issuesList.innerHTML = '';
 	
-	for(var i = 0; i < issues.length; i++) {
-		var id = issues[i].id;
-		var desc = issues[i].description;
-		var severity= issues[i].severity;
-		var assignedTo = issues[i].assignedTo;
-		var status = issues[i].status;
+	for(let i = 0; i < issues.length; i++) {
+		let id = issues[i].id;
+		let desc = issues[i].description;
+		let severity= issues[i].severity;
+		let assignedTo = issues[i].assignedTo;
+		let status = issues[i].status;
 		
 		
 		/* We want to botain below Html format for issue list below the form.  */
