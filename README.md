@@ -11,13 +11,24 @@
 
 
 
-<h3>2. Tech Stack Used </h3>
+<h3>2. Use Cases </h3>
+
+* Ticketing tools
+
+* To do list
+
+* Assigning task to someone else
+
+* Checklist
+
+
+<h3>3. Tech Stack Used </h3>
 HTML, CSS, Bootstrap, Javascript.
 
 From chancejs.com , javassciprt imported  for generating unique identifiers for ticket.
 
 
-<h3>Functions under the buttons</h3>
+<h3>4. Functions under the buttons</h3>
 
 
 1. Save Issue
