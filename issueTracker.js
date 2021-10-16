@@ -56,6 +56,9 @@ function setStatusClosed(id) {
 		
 		
 	}
+
+	alert('Your issue has been closed.')
+
 	
 	localStorage.setItem('issues', JSON.stringify(issues));
 	fetchIssues();
@@ -73,8 +76,11 @@ function deleteIssue(id) {
 		}
 		
 	}
+	
 	localStorage.setItem('issues', JSON.stringify(issues));
 	fetchIssues();
+
+	alert('Your issue will be deleted.')
 }
 
 /* Function FetchIssues will be used to fetch  the list of
@@ -105,7 +111,9 @@ function fetchIssues() {
 							'<p><span class="glyphicon glyphicon-time"></span>' + severity + '</p>' +
 							'<p><span class="glyphicon	glyphicon-user"></span>' + assignedTo + '</p>' +	
 							'<a href="#" onclick="setStatusClosed(\'' + id+'\')" class="btn btn-warning"  > Close</a>' + 
+							'  	     '+
 							'<a href="#" onclick="deleteIssue(\''+id+'\')" class="btn btn-danger"  > Delete</a>' + 
+							'<br/>' + '<br/>' +
 							'</div>';
 							
 	}						
